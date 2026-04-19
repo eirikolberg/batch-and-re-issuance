@@ -36,6 +36,12 @@ class CredentialController(private val credentialService: CredentialService) {
     //  Implementer batch issuance i sin enkleste form.
     //  Kjør testen CredentialControllerTest
 
+    // TODO: BONUS-OPPGAVE
+    //  Det er egentlig flere ting som må lages for å støtte batch credentials.
+    //  I speccen finner vi blant annet "batch_credential_issuance" og "batch_size.
+    //  Hva er disse, og hva brukes de til?
+    //  https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-credential-issuer-metadata-p
+
     val body = (request?.body as MutableMap<Any, Any>)
 
     val authorization = request.headers.getFirst("Authorization")
