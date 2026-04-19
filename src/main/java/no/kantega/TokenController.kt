@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-class EidasOpenIDController(
+class TokenController(
 ) {
 
     val accessTokenMap = mutableMapOf(
