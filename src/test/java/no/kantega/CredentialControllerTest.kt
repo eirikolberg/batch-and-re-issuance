@@ -11,7 +11,7 @@ import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequ
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
 import org.assertj.core.api.Assertions.assertThat
-import org.mockito.kotlin.eq
+import org.json.JSONObject
 import org.springframework.context.annotation.Import
 
 @WebMvcTest(CredentialController::class)
@@ -23,15 +23,18 @@ class CredentialControllerTest {
 
     @Test
     @WithMockUser
-    fun `requesting a credential with a valid access token returns credential response`() {
+    fun `requesting multiple credentials should work`() {
         val accessToken = AccessToken.create().value
 
         val requestBody = """
             {
                 "format": "dc+sd-jwt",
-                "proof": {
-                    "proof_type": "jwt",
-                    "jwt": "eyJhbGciOiJSUzI1NiJ9.eyJub25jZSI6ImR1bW15In0.signature"
+                "proofs": {
+                    "jwt": [
+                        "eyJhbGciOiJSUzI1NiJ9.eyJub25jZSI6ImR1bW15In0.signature",
+                        "eyJhbGciOiJSUzI1NiJ9.eyJub25jZSI6ImR1bW15In0.signature",
+                        "eyJhbGciOiJSUzI1NiJ9.eyJub25jZSI6ImR1bW15In0.signature"
+                    ]
                 }
             }
         """.trimIndent()
@@ -46,11 +49,13 @@ class CredentialControllerTest {
                 status { isOk() }
                 content { contentType(MediaType.APPLICATION_JSON) }
                 jsonPath("$.credentials") { exists() }
-                jsonPath("$.credentials.length()") { eq(1) }
             }
             .andReturn()
 
         val body = result.response.contentAsString
-        assertThat(body).contains("credentials")
+        // Parse body as json and assert that credentials is a list with three elements:
+        val bodyJson = JSONObject(body)
+        assertThat(bodyJson.getJSONArray("credentials").length()).isEqualTo(3)
+
     }
 }
