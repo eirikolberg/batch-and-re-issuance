@@ -1,4 +1,4 @@
-package no.kantega.tools
+package no.kantega.dontChangeThese
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.interfaces.DecodedJWT

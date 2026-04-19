@@ -1,7 +1,7 @@
 package no.kantega
 
-import no.kantega.tools.AccessToken
-import no.kantega.tools.CredentialService
+import no.kantega.dontChangeThese.AccessToken
+import no.kantega.dontChangeThese.CredentialService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest

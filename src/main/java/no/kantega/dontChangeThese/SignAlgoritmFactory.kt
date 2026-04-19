@@ -1,4 +1,4 @@
-package no.kantega.tools
+package no.kantega.dontChangeThese
 
 import com.auth0.jwt.algorithms.Algorithm
 import java.security.KeyPairGenerator

@@ -1,4 +1,4 @@
-package no.kantega.tools
+package no.kantega.dontChangeThese
 
 import id.walt.oid4vc.requests.CredentialRequest
 import org.springframework.stereotype.Service

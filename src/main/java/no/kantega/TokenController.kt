@@ -1,8 +1,8 @@
 package no.kantega
 
 import com.auth0.jwt.JWT
-import no.kantega.tools.AccessToken
-import no.kantega.tools.SignAlgoritmFactory
+import no.kantega.dontChangeThese.AccessToken
+import no.kantega.dontChangeThese.SignAlgoritmFactory
 import org.json.JSONObject
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity

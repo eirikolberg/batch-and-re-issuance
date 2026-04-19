@@ -2,15 +2,14 @@ package no.kantega
 
 import id.walt.crypto.utils.JsonUtils.toJsonObject
 import id.walt.oid4vc.requests.CredentialRequest
-import no.kantega.tools.CredentialResult
-import no.kantega.tools.CredentialService
-import no.kantega.tools.toAccessToken
+import no.kantega.dontChangeThese.CredentialResult
+import no.kantega.dontChangeThese.CredentialService
+import no.kantega.dontChangeThese.toAccessToken
 import org.json.JSONArray
 import org.json.JSONObject
 import org.springframework.http.MediaType
 import org.springframework.http.RequestEntity
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 import java.io.IOException
