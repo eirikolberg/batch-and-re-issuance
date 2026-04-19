@@ -1,4 +1,4 @@
-package no.kantega
+package no.kantega.tools
 
 sealed class CredentialResult {
     data class InvalidClientsFault(val errorMessage: String) : CredentialResult()

@@ -2,6 +2,7 @@ package no.kantega
 
 import id.walt.crypto.utils.JsonUtils.toJsonObject
 import id.walt.oid4vc.requests.CredentialRequest
+import no.kantega.tools.CredentialResult
 import no.kantega.tools.CredentialService
 import no.kantega.tools.toAccessToken
 import org.json.JSONArray
