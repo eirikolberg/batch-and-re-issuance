@@ -1,6 +1,7 @@
 package no.kantega
 
 import no.kantega.tools.AccessToken
+import no.kantega.tools.CredentialService
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
@@ -11,8 +12,10 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.post
 import org.assertj.core.api.Assertions.assertThat
 import org.mockito.kotlin.eq
+import org.springframework.context.annotation.Import
 
 @WebMvcTest(CredentialController::class)
+@Import(CredentialService::class)
 class CredentialControllerTest {
 
     @Autowired
