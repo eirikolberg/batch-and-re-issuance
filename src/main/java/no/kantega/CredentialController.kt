@@ -18,7 +18,6 @@ import java.io.IOException
 @RestController
 class CredentialController(private val credentialService: CredentialService) {
 
-  @CrossOrigin(origins = ["https://wallet.verifiablecredentials.dev/"])
   @PostMapping(value = ["/api/eidas/openid/credential"])
   @Throws(IOException::class)
   fun credential(request: RequestEntity<*>?): Any? {
