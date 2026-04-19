@@ -18,7 +18,6 @@ class EidasOpenIDController(
         "validPreAuthorizedCode123" to AccessToken.create()
     )
 
-    @CrossOrigin(origins = ["https://wallet.verifiablecredentials.dev/"])
     @PostMapping(value = ["/api/eidas/openid/token"])
     fun token(
         @RequestParam(
